@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go-Forth HVAC Plumbing & Electrical — GGOB Scoreboard</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260819_ggob1">
+  <link rel="stylesheet" href="styles.css?v=20260819_ggob1">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="container header-wrap">
+    <div class="brand-badge">
+      <div class="logo-icon">⚡</div>
+      <div class="title-area">
+        <h1>Go-Forth HVAC, Plumbing & Electrical</h1>
+        <div class="subtitle">The Great Game of Business (GGOB) Operations Scoreboard</div>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="badge-live">LIVE SCOREBOARD</div>
+      <div class="as-of-date" id="as-of-date-label">July 31, 2026 Close</div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs">
+    <button class="tab-btn active" data-tab="executive">
+      <span>👑</span> Executive Arena (President)
+    </button>
+    <button class="tab-btn" data-tab="branches">
+      <span>🏢</span> Revenue by Branch
+    </button>
+    <button class="tab-btn" data-tab="recurring">
+      <span>🛡️</span> Recurring Fortress (MRR/ARR & Cxls)
+    </button>
+    <button class="tab-btn" data-tab="techs">
+      <span>🏆</span> Tech Champions League
+    </button>
+    <button class="tab-btn" data-tab="minigames">
+      <span>🎮</span> MiniGames & Impact Simulator
+    </button>
+  </nav>
+
+  <!-- TAB 1: Executive Arena -->
+  <section class="tab-panel active" id="tab-executive">
+    <!-- Critical Number Banner -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">🎯 The Critical Number: Gross Margin % (Fuel in the Tank)</div>
+          <div class="card-subtitle">What percentage of each billed dollar stays with the company after direct equipment, parts, and job labor?</div>
+        </div>
+        <div class="badge win" id="critical-number-badge">39.2% Peak (Target: 35%+)</div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-labels">
+          <span id="gm-current-label">2026 YTD Margin: 28.8% (June Peak: 39.2% | July: 36.6%)</span>
+          <span>Target: 35.0%+</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill green" id="gm-progress-bar" style="width: 82.3%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 Core President Scorecards -->
+    <div class="kpi-grid" id="exec-kpis">
+      <!-- Rendered dynamically -->
+    </div>
+
+    <!-- Monthly P&L Rounds Table -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">📅 12-Month Operating Rounds (Rolling P&L & Department Quests)</div>
+          <div class="card-subtitle">Scorecard by month comparing Revenue, Margin, EBITDA, Open AR, and Department Job Volumes</div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="ggob-table" id="rounds-table">
+          <thead>
+            <tr>
+              <th>Round / Month</th>
+              <th class="num">Revenue ($k)</th>
+              <th class="num">Growth YoY</th>
+              <th class="num">Gross Margin %</th>
+              <th class="num">EBITDA ($k)</th>
+              <th class="num">Open AR ($k)</th>
+              <th class="num">HVAC Serv</th>
+              <th class="num">Plumb</th>
+              <th class="num">Maint Cust</th>
+              <th class="num">Team</th>
+              <th>Outcome</th>
+            </tr>
+          </thead>
+          <tbody id="rounds-tbody">
+            <!-- Rendered dynamically -->
+          </tbody>
+          <tfoot id="rounds-tfoot">
+            <!-- Rendered dynamically -->
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 2: Revenue by Branch -->
+  <section class="tab-panel" id="tab-branches">
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">🏢 Operating Territories & Branch Arena</div>
+          <div class="card-subtitle">Revenue distribution, invoice volumes, average ticket size, and member concentration across regions</div>
+        </div>
+      </div>
+      <div class="kpi-grid" id="branch-kpis">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="table-wrap">
+        <table class="ggob-table" id="branch-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Branch / Operating Region</th>
+              <th>Core Cities Covered</th>
+              <th class="num">2026 YTD Revenue</th>
+              <th class="num">% Share</th>
+              <th class="num">Invoices</th>
+              <th class="num">Avg / Inv</th>
+              <th class="num">Active Members</th>
+              <th class="num">Est Margin</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="branch-tbody">
+            <!-- Rendered dynamically -->
+          </tbody>
+          <tfoot id="branch-tfoot">
+            <!-- Rendered dynamically -->
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 3: Recurring Fortress -->
+  <section class="tab-panel" id="tab-recurring">
+    <!-- Quest to 1,750 Members -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">🛡️ Recurring Fortress: Active Maintenance Customer Base</div>
+          <div class="card-subtitle">Tracking growth from 186 prior year members to 1,549 active Comfort Guard members</div>
+        </div>
+        <div class="badge record" id="maint-quest-badge">Quest Target: 1,750 Members</div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-labels">
+          <span id="maint-current-label">Current Active Base: 1,549 Members (88.5% of Quest)</span>
+          <span>Goal: 1,750 (+201 needed)</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill gold" id="maint-progress-bar" style="width: 88.5%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recurring KPIs -->
+    <div class="kpi-grid" id="recurring-kpis">
+      <!-- Rendered dynamically -->
+    </div>
+
+    <!-- Plan Tiers & Leaky Bucket Split -->
+    <div class="grid-2">
+      <!-- Left: Plan Tiers -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">💳 Agreement Tiers & MRR Mix</div>
+        </div>
+        <div class="table-wrap">
+          <table class="ggob-table" id="tiers-table">
+            <thead>
+              <tr>
+                <th>Tier / Service Plan</th>
+                <th class="num">Rate/Mo</th>
+                <th class="num">Count</th>
+                <th class="num">Monthly MRR</th>
+                <th class="num">% MRR</th>
+              </tr>
+            </thead>
+            <tbody id="tiers-tbody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Right: Leaky Bucket Cancellations -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">🛑 Plug the Leak: Cancellation Radar</div>
+            <div class="card-subtitle">Root cause analysis of 2026 cancellations & operational remedies</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="ggob-table" id="cxl-table">
+            <thead>
+              <tr>
+                <th>Cancellation Driver</th>
+                <th class="num">CG Lost</th>
+                <th class="num">% Share</th>
+                <th>Prescribed Operational Save</th>
+              </tr>
+            </thead>
+            <tbody id="cxl-tbody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 4: Tech Champions League -->
+  <section class="tab-panel" id="tab-techs">
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">🏆 Technician Performance & Sales Champions League</div>
+          <div class="card-subtitle">Individual production: Total $ Sold, Closed Sales Count, and Average Ticket ($ / Sale)</div>
+        </div>
+        <div class="badge win">100% Clean Draws June & July</div>
+      </div>
+      <div class="table-wrap">
+        <table class="ggob-table" id="tech-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Technician</th>
+              <th>Specialty / Role</th>
+              <th>Achievement Badge</th>
+              <th class="num">Total $ Sold</th>
+              <th class="num"># Closed Deals</th>
+              <th class="num">Avg $ / Sale</th>
+              <th class="num">Stops Done</th>
+              <th class="num">CG Sold</th>
+              <th class="num">Installs</th>
+              <th class="num">Parts/Plumb</th>
+              <th>Draw Streak</th>
+            </tr>
+          </thead>
+          <tbody id="tech-tbody">
+            <!-- Rendered dynamically -->
+          </tbody>
+          <tfoot id="tech-tfoot">
+            <!-- Rendered dynamically -->
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <!-- Inside Sales Unit Champions -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">📞 Inside Sales & Member Growth Champions</div>
+          <div class="card-subtitle">Top agreement drivers adding monthly recurring subscriptions to the fortress</div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="ggob-table" id="inside-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Advisor Name</th>
+              <th class="num">Comfort Guard Sold</th>
+              <th class="num">Total Volume</th>
+              <th class="num">Monthly MRR Added</th>
+              <th class="num">Avg Agreement Value</th>
+            </tr>
+          </thead>
+          <tbody id="inside-tbody">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 5: MiniGames & Simulator -->
+  <section class="tab-panel" id="tab-minigames">
+    <!-- Active MiniGames Grid -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">🎯 Active GGOB MiniGames (Team Quests)</div>
+          <div class="card-subtitle">Focused short-term challenges designed to move the Critical Number and build the bonus pool</div>
+        </div>
+      </div>
+      <div class="minigame-grid" id="minigames-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+
+    <!-- What-If Huddle Simulator -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">⚡ "Play to Win" Impact Calculator (Huddle Simulator)</div>
+          <div class="card-subtitle">See how small daily operational wins compound into massive profit and recurring wealth</div>
+        </div>
+      </div>
+      <div class="simulator-box">
+        <div class="sim-controls">
+          <div class="sim-slider-group">
+            <div class="sim-slider-header">
+              <span>New Club Agreements / Tech / Week:</span>
+              <span class="sim-slider-val" id="val-slider-cg">+2 agreements / tech / wk</span>
+            </div>
+            <input type="range" id="slider-cg" min="0" max="10" value="2" step="1">
+          </div>
+          <div class="sim-slider-group">
+            <div class="sim-slider-header">
+              <span>Average Job Ticket Boost ($):</span>
+              <span class="sim-slider-val" id="val-slider-ticket">+$150 / ticket</span>
+            </div>
+            <input type="range" id="slider-ticket" min="0" max="500" value="150" step="25">
+          </div>
+          <div class="sim-slider-group">
+            <div class="sim-slider-header">
+              <span>Monthly Cancellation Reduction:</span>
+              <span class="sim-slider-val" id="val-slider-cxl">-20% cancellations</span>
+            </div>
+            <input type="range" id="slider-cxl" min="0" max="50" value="20" step="5">
+          </div>
+        </div>
+        <div class="sim-results">
+          <div class="sim-res-item">
+            <div class="label">Annual Recurring Revenue Added (ARR)</div>
+            <div class="val" id="sim-arr-res">+$234,000 / yr</div>
+          </div>
+          <div class="sim-res-item">
+            <div class="label">Direct Job Profit Added</div>
+            <div class="val" id="sim-profit-res">+$126,000 / yr</div>
+          </div>
+          <div class="sim-res-item">
+            <div class="label">Estimated GGOB Team Bonus Pool</div>
+            <div class="val" id="sim-pool-res">+$36,000 / yr</div>
+          </div>
+          <div class="sim-res-item">
+            <div class="label">Bonus Per Team Member (21 Staff)</div>
+            <div class="val" id="sim-per-member">+$1,714 / person</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    Go-Forth HVAC Plumbing and Electrical LLC • The Great Game of Business (GGOB) Operations Scoreboard • Data synced through July 31, 2026
+  </div>
+</footer>
+
+<script src="config.js?v=20260819_ggob1"></script>
+<script src="app.js?v=20260819_ggob1"></script>
+</body>
+</html>
